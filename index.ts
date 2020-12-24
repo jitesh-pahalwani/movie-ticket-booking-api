@@ -4,6 +4,9 @@ import express from 'express';
 import cors from 'cors';
 
 import { getMoviesRouter } from './src/routes/get-movies';
+import { getVenuesRouter } from './src/routes/get-venues';
+import { getAvailabilityRouter } from './src/routes/get-availability';
+import { setAvailabilityRouter } from './src/routes/set-availability';
 
 import { errorHandler } from './src/middlewares/error-handler';
 
@@ -12,6 +15,9 @@ app.use(express.json());
 app.use(cors());
 
 app.use(getMoviesRouter);
+app.use(getVenuesRouter);
+app.use(getAvailabilityRouter);
+app.use(setAvailabilityRouter);
 
 app.use(errorHandler);
 

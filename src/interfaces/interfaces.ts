@@ -15,3 +15,25 @@ export interface MoviesInterface {
     awards: string;
     poster: string;
 }
+
+export interface VenuesInterface {
+    venue_name: string;
+    bookings: Array<BookingsInterface>;
+}
+
+export interface BookingsInterface {
+    movie_id: string;
+    seats: Array<SeatInterface>;
+}
+
+export interface SeatInterface {
+    seat_number: string;
+    status: SeatAvailability;
+    cost: number;
+}
+
+export enum SeatAvailability {
+    empty = "empty",
+    reserved = "reserved",
+    locked = "locked",
+}
